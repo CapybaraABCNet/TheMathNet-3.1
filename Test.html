@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMath.NET: Учебный портал по математике и соц.сеть</title>
+    <link rel="stylesheet" href="styless.css">
+  </head>
+  <body>
+     <header>
+        <div class="logo">
+            <img src="ph.jpg"> 
+            <h1>TheMath.Net</h1>
+            <button class="butttt" command="show-modal" commandfor="plan">Посмотреть план сайта</button>
+            <dialog id="plan" class="text">
+                <p style='color: black;'>План сайта:</p>
+                <a href="index.html">Главная страница</a><br>
+                <a href="doc.html">Документация, рассказ об этом сайте</a><br>
+                <a href="calc.html">Калькуляторы</a><br>
+                <a href="forum.php">Форум</a><br>
+                <a href="in.php">Регистрация</a><br>
+                <a href="fo.php">Авторизация</a><br>
+                <a href="new.php">Новости</a><br>
+                <a href="cartooo.php">задачи</a><br>
+                <a href="zam.html">Заметки</a>
+                <a href="class.php">ДЗ</a>
+                <a href="gost.php">Форум без регистрации</a><br>
+                <a href="bot.html">Бот для обучения</a><br>
+                <a href="Test.html">Тесты и игры</a><br>
+                <a href="informatika.php">Информатика</a>
+                <button commandfor="plan" command="close">Закрыть</button>
+            </dialog>
+        </div>
+    </header>
+            <div class="container">
+                <h2>План страницы</h2>
+                <a href="#test">Тесты</a>
+                <a href="#game">Игры</a>
+            </div>
+            <div id="test">
+                <h2 class="text">Тесты по математике</h2>
+
+                <div>
+                    <div class="container">
+                        <h3>Тест по дробям</h3>
+                        <p>Тест с вариантами ответов</p>
+                        <a href="test1.html"><button>Пройти</button></a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="game">
+                <div class="container">
+                    <h1>Mathematical battle with a Dragon</h1>
+        <h1>🧮</h1>
+
+        <h3 id="">Привет! Это игра "Mathematical battle with a Dragon", тут ты должен давать ответы на примеры, и этим самым вы выигравыете, и переходите на следуйщий уровень. Начинаем! Вы увидили маленького эльфа, решите пример чтобы пройти дальше</h3>
+        <pre id="console"></pre>
+        <span class="prompt">></span> <input type="text" id="input" autofocus>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>TheMath.NET, создатель: CapybaraABC.NET</p>
+    </footer>
+
+    <script>
+        const consoleEl = document.getElementById('console');
+        const inputEl = document.getElementById('input');
+        
+        let gameState = 'start';
+        
+        function log(message) {
+            consoleEl.textContent += `\n> ${message}`;
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        function handleInput(event) {
+            if (event.key === 'Enter') {
+                const userInput = inputEl.value.trim();
+                inputEl.value = '';
+                processCommand(userInput);
+            }
+        }
+
+        function processCommand(command) {
+            switch (gameState) {
+                case 'start':
+                    if (command === '175') {
+                        gameState = '2';
+                        log("Вы его победили! Пример правильный,");
+                        log("Вы проходите на второй уровень!");
+                        log("Вы увидели брата Эльфа, он на вас напал, 124 * 7 = ?");
+                    } else {
+                        log("Game Over, Вы проиграли ):, пример не правильный");
+                        return; 
+                    }
+                    break;
+                case "2":
+                    if (command === "868") {
+                        gameState = '3';
+                        log("ВЫ его победили! Пример правильный!");
+                        log("Вы увидили старого Гоблина, он на вас напал: 4840 / 5 = ?");
+                    }
+                    else {
+                        log("Game Over ):");
+                        return;
+                    }
+                    break;
+                case "3":
+                    if (command === "968") {
+                        gameState = "4";
+
+                        log("Вы его победили, пример правильный!");
+                        log("Вы увидели Злого Гоблина, он на вас напал: 456 * 9 = ?");
+                    }
+                    else {
+                        log("Game Over!");
+                        return;
+                    }
+                    break;
+                case "4":
+                    if (command === 4104) {
+                        gameState = "5";
+
+                        log("Вы его победили! Пример правильный!");
+                        log("За вами погнался Гоблин солдат, он на вас напал: 88436 * 4 = ?");
+                    }
+                    else {
+                        log("Game Over");
+                        return;
+                    }
+                    break;
+                case "5": 
+                    if (command === 353744) {
+                        gameState = "6";
+
+                        log("Вы его победили! Пример правильный!");
+                        log("Вы увидели чёрного мага, он на вас напал: 619052 / 7 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "6":
+                    if (command === 88436) {
+                        gameState = "7";
+
+                        log("Вы его победили! Пример правильный!");
+                        log("Вы увидели Демон разложения, он на вас напал: 782136 * 2 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "7":
+                    if (command === 1564272) {
+                        gameState = "8";
+
+                        log("Вы его победили! Пример правильный!");
+                        log("На вас напал Лорд вампиров, он на вас напал: 3159592 / 4 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "8":
+                    if (command === 789898) {
+                        gameState = "9";
+
+                        log("Вы его победили! Пример правильный!");
+                        log("На вас напала Королева пауков: 55887439 + 47443012 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "9":
+                    if (command === 103330451) {
+                        gameState = "10";
+
+                        log("Вы её победили! Пример правильный!");
+                        log("На вас напал Морской монстр: 5858 * 91 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "10":
+                    if (command === 533078) {
+                        gameState = "11";
+
+                        log("Вы его победили! Пример правильный");
+                        log("На вас напал Ледяной колдун: 43322 * 67 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "11":
+                    if (command === 2902574) {
+                        gameState = "12";
+
+                        log("Вы его победили! Пример правильный");
+                        log("На вас напал Гигантский тролль: 55443 * 12345 = ?");
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+                case "12":
+                    if (command === 684443835) {
+                        log("Всё правильно! Вы Выиграли! Вы получаете 10 000 капибара коинов!");
+                        log("You win!");
+                        return;
+                    }
+                    else {
+                        log("Game over!");
+                        return;
+                    }
+                    break;
+            }
+        }
+
+        inputEl.addEventListener('keydown', handleInput);
+        restartGame();
+
+        function restartGame() {
+            gameState = 'start';
+            consoleEl.textContent = '';
+            
+            log("52 + 123 = ?");
+        }
+    </script>
+  </body>
+</html>

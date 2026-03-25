@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMath.NET: Учебный портал по математике и соц.сеть</title>
+    <link rel="stylesheet" href="styless.css">
+  </head>
+  <body>
+     <header>
+        <div class="logo">
+            <img src="ph.jpg"> 
+            <h1>TheMath.Net</h1>
+            <button class="butttt" command="show-modal" commandfor="plan">Посмотреть план сайта</button>
+            <dialog id="plan" class="text">
+                <p style='color: black;'>План сайта:</p>
+                <a href="index.html">Главная страница</a><br>
+                <a href="doc.html">Документация, рассказ об этом сайте</a><br>
+                <a href="calc.html">Калькуляторы</a><br>
+                <a href="forum.php">Форум</a><br>
+                <a href="in.php">Регистрация</a><br>
+                <a href="fo.php">Авторизация</a><br>
+                <a href="new.php">Новости</a><br>
+                <a href="cartooo.php">задачи</a><br>
+                <a href="zam.html">Заметки</a>
+                <a href="class.php">ДЗ</a>
+                <a href="gost.php">Форум без регистрации</a><br>
+                <a href="bot.html">Бот для обучения</a><br>
+                <a href="Test.html">Тесты и игры</a><br>
+                <a href="informatika.php">Информатика</a>
+                <button commandfor="plan" command="close">Закрыть</button>
+            </dialog>
+        </div>
+    </header>    
+    <div class="text">
+        <div>
+            <div class="container">
+        <h2>Навигация по странице</h2>
+        <a href="#calc">Калькулятор</a><br>
+        <a href="#NOD">НОД И НОК</a><br>
+        <a href="#calcd">Калькулятор Дробей</a><br>
+        <a href="#dr">Сравнитель дробей</a><br>
+        <a href="#stepen">Степени</a><br>
+        <a href="#Smesh">Смешанные дроби</a><br>
+        <a href="#Factor">Факториал</a><br>
+        <a href="#fibon">Фибоначчи</a><br>
+        <a href="#log">Логарифмы</a><br>
+        <a href="#coren">Квадратный Корень</a><br>
+        <a href="#perimetr">Вычисления периметра</a><br>
+        <a href="#plosh">Вычисления Площади</a><br>
+        <a href="#dd">Десятичные дроби</a>
+      </div>
+      <div>
+        <div id="calc" class="container">
+          <h2>Обычный Калькулятор</h2>
+          <p>Введите первое число</p>
+          <input id="chislo1" type="number">
+          <p>Введите второе число</p>
+          <input id="chislo2" type="number">
+          <p>Введите мат. знак</p>
+          <div>
+            <button onclick="pos('+')">+</button>
+            <button onclick="pos('-')">-</button>
+            <button onclick="pos('*')">*</button>
+            <button onclick="pos('/')">/</button>
+          </div>
+          <br>
+          <p id="otvet"></p>
+        </div>
+        <div id="NOD" class="container">
+          <h2>Считаение НОДа</h2>
+          <p>Введите первое число</p>
+          <input id="perch" placeholder="Введите тут число" type="number">
+          <p>Введите второе число</p>   
+          <input id="perch0" placeholder="Введите тут число" type="number"><br> 
+          <button onclick="pposs()">Посчитать</button><br>
+          <p id="rre"></p>
+        </div>
+        <div class="container">
+          <h2>Считание НОКа</h2>
+          <p>Введите первое число</p><br>
+          <input type="number" id="nok1"><br>
+          <p>Введите второе число</p><br>
+          <input type="number" id="nok2"><br>
+          <button onclick="NOK()">Посчитать</button>
+          <p id="otvetnok"></p>
+        </div>
+        <div id="calcd" class="container">
+          <h2>Калькулятор дробей</h2>
+            <p>Введите первую Целую часть (если есть, если нет то просто не заполняйте)</p>
+            <input id="cel1" placeholder="0" type="number">
+            <p>Введите первый числитель</p>
+            <input id="chisl1" type="number">
+            <p>Введите первый знаменатель</p>
+            <input id="znam1" type="number">
+            <p>Введите вторую Целую часть (если есть, если нет то просто не заполняйте)</p>
+            <input id="cel2" placeholder="0" type="number">
+            <p>Введите второй числитель</p>
+            <input type="number" id="chisl2">
+            <p>Введите второй знаменатель</p>
+            <input id="znam2" type="number">
+            <div>
+                <button onclick="pos1('+')">+</button>
+                <button onclick="pos1('*')">*</button>
+            </div>
+            <br>
+            <p id="result"></p>
+        </div>
+        <div id="dr" class="container">
+            <h2>Сравнение дробей</h2>
+            <p>Введите целую часть (если есть)</p>
+            <input id="cel11" placeholder="0" type="number">
+            <p>Введите первый числитель</p>
+            <input id="chisl11" type="number">
+            <p>Введите первый знаменатель</p>
+            <input id="znam11" type="number">
+            <p>Введите вторую Целую часть (если есть, если нет то просто не заполняйте)</p>
+            <input id="cel22" placeholder="0" type="number">
+            <p>Введите второй числитель</p>
+            <input type="number" id="chisl22">
+            <p>Введите второй знаменатель</p>
+            <input id="znam22" type="number">
+            <button onclick="sravn()">Сравнить</button>
+            <p id="result1"></p>
+        </div>
+      </div>
+      <div id="stepen" class="container">
+        <h2>Превращение в степень</h2>
+        <p>Введите число</p>
+        <input id="chisslo" type="number">
+        <p>Введите в какую надо возвестить в степень</p>
+        <input id="chisslo1" type="number">
+        <button onclick="stepen()">Сравнить</button>
+        <p id="otvet1"></p>
+      </div>
+      <div id="Smesh" class="container">
+        <h2>Из неправильной дроби, в правильную</h2>
+        <p>Введите числитель</p>
+        <input id="nepr" class="container">
+        <p>Введите знаменатель</p>
+        <input id="nepr1" class="container"><br>
+        <button onclick="resh()">Решить</button>
+        <p id="nepr2"></p>
+      </div>
+      <div class="container">
+        <h2>Из смешанной, в неправильную</h2>
+        <p>Введите целую часть</p>
+        <input id="celll" type="number">
+        <p>Введите числитель</p>
+        <input  id="chisl10" type="number">
+        <p>Введите знаменатель</p>
+        <input id="znam10" type="number">
+        <br>
+        <button onclick="resh1()">Посчитать</button>
+        <p id="ot"></p>
+      </div>
+      <div class="container" id="Factor">
+        <h2>Факториал</h2>
+        <p>Введите число</p>
+        <input id="factorial" type="number"><br>
+        <button onclick="factor()">Посчитать</button>
+        <p id="posp"></p>
+      </div>
+      <div class="container" id="fibon">
+        <h2>Числа фибоначчи</h2>
+        <p>Введите число</p>
+        <input type="number" id="ff"><br>
+        <button onclick="fib()">Узнать</button>
+        <p id="otfi"></p>
+      </div>
+      <div class="container" id="log">
+        <h2>Логарифмы</h2>
+        <p>Пример: log(a) b = c</p>
+        <p>Введите a</p>
+        <input id="aa" type="number">
+        <p>Введите b</p>
+        <input id="bb" type="number"><br>
+        <button onclick="log()">Узнать</button>
+        <p id="otvetaa"></p>
+      </div>
+      <div class="container" id="coren">
+        <h2>Квадратный Корень</h2>
+        <p>Введите число</p><br>
+        <input type="number" id="core"><br>
+        <button onclick="coren()">Получить</button>
+        <p id="cor"></p>
+      </div>
+    </div>
+    <div class="container" id="perimetr">
+        <h2>Вычисления периметра прямоугольника</h2>
+        <p>Введи длину</p>
+        <input type="number" id="dlina1">
+        <p>Введи ширину</p>
+        <input type="number" id="shirina1"><br>
+        <button onclick="shirina()">Посчитать</button>
+        <p id="sh1"></p>
+    </div>
+    <div class="container">
+        <h2>Вычисления периметра треугольника</h2>
+        <p>Введи первую сторону</p>
+        <input type="number" id="storona"><br>
+        <p>Введи вторую сторону</p>
+        <input type="number" id="storona1"><br>
+        <p>Введи основание</p>
+        <input type="number" id="os"><br>
+        <button onclick="shirin()">Посчитать</button>
+        <p id="sh"></p>
+    </div>
+    <div class="container" id="plosh">
+        <h2>Вычисление площади прямоугольника</h2>
+        <p>Введи длину</p>
+        <input type="number" id="dlina2">
+        <p>Введи ширину</p>
+        <input type="number" id="shirina2"><br>
+        <button onclick="shirina1()">Посчитать</button>
+        <p id="dds"></p>
+    </div>
+    <div class="container">
+        <h2>Вычисления площади круга</h2>
+        <p>Введите </p>
+        <input type="number" id="radius">
+        <button onclick="plosh()">Посчитать</button>
+        <p id="dds1"></p>
+    </div>
+    <div class="container">
+        <h2>Вычисления площади треугольника</h2>
+        <p>Введи первую сторону</p>
+        <input type="number" id="storona0"><br>
+        
+        <p>Введи основание</p>
+        <input type="number" id="os1"><br>
+        <button onclick="pl()">Посчитать</button>
+        <p id="dds2"></p>
+    </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>TheMath.NET, создатель: CapybaraABC.NET</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>
