@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Калькулятор</title>
+		<style>
+			       body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff1b1b, #ffbb00);
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .game-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .capybara {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .status {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #ff3030;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #ff0000;
+        }
+        
+        h1, h3 {
+            color: #000000;
+            margin-bottom: 10px;
+        }
+		</style>
+	</head>
+	<body>
+		
+		<div class="game-box">
+			<h1>Калькулятор</h1><br>
+			<a href="https://capybaraabcnet.github.io/TheMathNet-3.1/calc.html">Вернуться назад</a>
+			<h3 id="otvet"></h3>
+			<div>
+				<button onclick="func(0)">0</button>
+				<button onclick="func(1)">1</button>
+				<button onclick="func(2)">2</button>
+				<button onclick="func(3)">3</button>
+				<button onclick="func(4)">4</button>
+				<button onclick="func(5)">5</button>
+				<button onclick="func(6)">6</button>
+				<button onclick="func(7)">7</button>
+				<button onclick="func(8)">8</button>
+				<button onclick="func(9)">9</button>
+				<button onclick="func('+')">+</button>
+				<button onclick="func('-')">-</button>
+				<button onclick="func('*')">*</button>
+				<button onclick="func('/')">/</button>
+				<button onclick="func('**2')">x&sup2;</button>
+				<button onclick="func('**')">Возведение в степень</button>
+				<button onclick="func('3.14')">π</button>
+				<button id="TheResh">=</button>
+				<button id="C">C</button>
+			</div>
+			<div>
+				<details>
+					<summary>История запросов</summary>
+					<div id="history"></div>
+				</details>
+			</div>
+		</div>
+		<script>
+			const TheResh = document.getElementById('TheResh');
+			const c = document.getElementById('C');
+			const otvet = document.getElementById('otvet');
+			const historyDiv = document.getElementById('history');
+
+			let str = '';
+			let result = '';
+			let history = [];
+
+			function func(a) {
+				str += a;
+				ot();
+				
+				console.log(str);
+			}
+
+			function ot() {
+				otvet.textContent = str || '0';
+			}
+
+			function UpdateHistory() {
+				historyDiv.innerHTML = history.join('<br>');
+			}
+
+			c.addEventListener('click', function () {
+				str = '';
+				ot();
+			});
+
+			TheResh.addEventListener('click', function () {
+				result = eval(str)
+				if (isNaN(result)) {
+					result = 'Введите нормальный пример';
+				}
+				console.log(result);
+				otvet.textContent = result;
+				history.push(str + ' = ' + result);
+				UpdateHistory();
+			});
+		</script>
+	</body>
+</html>
